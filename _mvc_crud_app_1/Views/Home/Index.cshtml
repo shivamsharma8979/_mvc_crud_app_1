@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h1>please fill the detail </h1>
+@model  _mvc_crud_app_1.Models.employee
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.id); 
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextAreaFor(m => m.name, new { @class = "form-control", placeholder = "Name", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextAreaFor(m => m.email, new { @class = "form-control", placeholder = "email", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>mobile</label>
+        @Html.TextAreaFor(m => m.mobile, new { @class = "form-control", placeholder = "enetr your mobile number", @required = "required" })
+    </div>
+    <div class="form-group">
+        <label>city</label>
+        @Html.TextAreaFor(m => m.city, new { @class = "form-control", placeholder = "enetr your city", @required = "required" })
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+}
